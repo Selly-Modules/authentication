@@ -4,6 +4,20 @@ import (
 	"github.com/Selly-Modules/natsio"
 )
 
+// Role ...
+type Role struct {
+	ID          string   `bson:"_id"`
+	Name        string   `bson:"name"`
+	CreatedAt   string   `bson:"createdAt"`
+	UpdatedAt   string   `bson:"updatedAt"`
+	Permissions []string `bson:"permissions"`
+}
+
+// ListRole ...
+type ListRole struct {
+	Roles []Role `json:"roles"`
+}
+
 // Staff ...
 type Staff struct {
 	ID                   string   `json:"_id"` // ObjectID

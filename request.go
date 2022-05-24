@@ -18,3 +18,8 @@ func (Request) GetPermission(payload StaffGetPermissions) (*Response, error) {
 func (Request) SyncData(payload ListStaff) (*Response, error) {
 	return requestNats(SubjectRequestNatsSyncStaff, toBytes(payload))
 }
+
+// SyncRoleData ...
+func (Request) SyncRoleData(payload ListRole) (*Response, error) {
+	return requestNats(SubjectRequestNatsSyncRole, toBytes(payload))
+}
