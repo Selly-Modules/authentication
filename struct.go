@@ -1,6 +1,29 @@
 package authentication
 
-import "github.com/Selly-Modules/natsio"
+import (
+	"github.com/Selly-Modules/natsio"
+)
+
+// Staff ...
+type Staff struct {
+	ID                   string   `json:"_id"` // ObjectID
+	Name                 string   `json:"name"`
+	Phone                string   `json:"phone"`
+	Active               bool     `json:"active"`
+	Role                 string   `json:"role,omitempty"`   // ObjectID
+	Avatar               []byte   `json:"avatar,omitempty"` // FilePhoto
+	CreatedAt            string   `json:"createdAt"`        // ISOString
+	UpdatedAt            string   `json:"updatedAt"`        // ISOString
+	IsRoot               bool     `json:"isRoot"`
+	Permissions          []string `json:"permissions"`
+	NotAllowedLoginAdmin bool     `json:"notAllowedLoginAdmin"`
+	Source               []string `json:"source"`
+}
+
+// ListStaff ...
+type ListStaff struct {
+	Staffs []Staff `json:"staffs"`
+}
 
 // Config int client elasticsearch
 type Config struct {
