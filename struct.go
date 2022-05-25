@@ -47,10 +47,18 @@ type Config struct {
 
 // StaffCheckPermissionBody ...
 type StaffCheckPermissionBody struct {
-	StaffID    string `json:"staffId"`
-	Permission string `json:"permission"`
-	Source     string `json:"source"`
-	Code       string `json:"code,omitempty"`
+	StaffID    string                 `json:"staffId"`
+	Permission string                 `json:"permission"`
+	Source     string                 `json:"source"`
+	Code       string                 `json:"code,omitempty"`
+	Payload    PayloadCheckPermission `json:"payload"`
+}
+
+// PayloadCheckPermission ...
+type PayloadCheckPermission struct {
+	URL    string `json:"url"`
+	Body   string `json:"body"`
+	Method string `json:"method"`
 }
 
 // StaffCheckPermissionResponse ...
