@@ -6,12 +6,10 @@ import (
 
 // Staff ...
 type Staff struct {
-	ID          string   `json:"_id"` // ObjectID
+	Reference   string   `json:"reference"` // ObjectID
 	Name        string   `json:"name"`
 	Phone       string   `json:"phone"`
 	Active      bool     `json:"active"`
-	CreatedAt   string   `json:"createdAt"` // ISOString
-	UpdatedAt   string   `json:"updatedAt"` // ISOString
 	IsRoot      bool     `json:"isRoot"`
 	Permissions []string `json:"permissions"`
 	Source      string   `json:"source"`
