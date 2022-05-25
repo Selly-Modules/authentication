@@ -4,34 +4,17 @@ import (
 	"github.com/Selly-Modules/natsio"
 )
 
-// Role ...
-type Role struct {
-	ID          string   `bson:"_id"`
-	Name        string   `bson:"name"`
-	CreatedAt   string   `bson:"createdAt"`
-	UpdatedAt   string   `bson:"updatedAt"`
-	Permissions []string `bson:"permissions"`
-}
-
-// ListRole ...
-type ListRole struct {
-	Roles []Role `json:"roles"`
-}
-
 // Staff ...
 type Staff struct {
-	ID                   string   `json:"_id"` // ObjectID
-	Name                 string   `json:"name"`
-	Phone                string   `json:"phone"`
-	Active               bool     `json:"active"`
-	Role                 string   `json:"role,omitempty"`   // ObjectID
-	Avatar               []byte   `json:"avatar,omitempty"` // FilePhoto
-	CreatedAt            string   `json:"createdAt"`        // ISOString
-	UpdatedAt            string   `json:"updatedAt"`        // ISOString
-	IsRoot               bool     `json:"isRoot"`
-	Permissions          []string `json:"permissions"`
-	NotAllowedLoginAdmin bool     `json:"notAllowedLoginAdmin"`
-	Source               []string `json:"source"`
+	ID          string   `json:"_id"` // ObjectID
+	Name        string   `json:"name"`
+	Phone       string   `json:"phone"`
+	Active      bool     `json:"active"`
+	CreatedAt   string   `json:"createdAt"` // ISOString
+	UpdatedAt   string   `json:"updatedAt"` // ISOString
+	IsRoot      bool     `json:"isRoot"`
+	Permissions []string `json:"permissions"`
+	Source      string   `json:"source"`
 }
 
 // ListStaff ...

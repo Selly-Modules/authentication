@@ -19,7 +19,12 @@ func (Request) SyncData(payload ListStaff) (*Response, error) {
 	return requestNats(SubjectRequestNatsSyncStaff, toBytes(payload))
 }
 
-// SyncRoleData ...
-func (Request) SyncRoleData(payload ListRole) (*Response, error) {
-	return requestNats(SubjectRequestNatsSyncRole, toBytes(payload))
+// CreateStaff ...
+func (Request) CreateStaff(payload Staff) (*Response, error) {
+	return requestNats(SubjectRequestNatsStaffCreate, toBytes(payload))
+}
+
+// UpdateStaff ...
+func (Request) UpdateStaff(payload Staff) (*Response, error) {
+	return requestNats(SubjectRequestNatsStaffUpdate, toBytes(payload))
 }
