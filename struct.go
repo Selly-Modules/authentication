@@ -8,6 +8,7 @@ import (
 type Staff struct {
 	Reference   string   `json:"reference"` // ObjectID
 	Name        string   `json:"name"`
+	Email       string   `json:"email"`
 	Phone       string   `json:"phone"`
 	Active      bool     `json:"active"`
 	IsRoot      bool     `json:"isRoot"`
@@ -33,6 +34,7 @@ type StaffCheckPermissionBody struct {
 	Source     string                 `json:"source"`
 	Code       string                 `json:"code,omitempty"`
 	Payload    PayloadCheckPermission `json:"payload"`
+	IsRoot     bool                   `json:"isRoot"`
 }
 
 // PayloadCheckPermission ...
@@ -52,6 +54,7 @@ type StaffCheckPermissionResponse struct {
 type StaffGetPermissions struct {
 	StaffID string `json:"staffId"`
 	Source  string `json:"source"`
+	Prefix  string `json:"prefix"`
 }
 
 // StaffGetPermissionsResponse ...
