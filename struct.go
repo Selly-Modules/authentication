@@ -31,7 +31,8 @@ type Config struct {
 type StaffCheckPermissionBody struct {
 	StaffID    string                 `json:"staffId"`
 	Token      string                 `json:"token"`
-	Permission string                 `json:"permission"`
+	Permission []string               `json:"permission"`
+	Action     string                 `json:"action"`
 	Source     string                 `json:"source"`
 	Code       string                 `json:"code,omitempty"`
 	Payload    PayloadCheckPermission `json:"payload"`
