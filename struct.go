@@ -4,6 +4,15 @@ import (
 	"github.com/Selly-Modules/natsio"
 )
 
+// Log ...
+type Log struct {
+	Reference  string                 `json:"reference"`
+	Payload    PayloadCheckPermission `json:"payload"`
+	Source     string                 `json:"source"`
+	Permission []string               `json:"permission"`
+	Action     string                 `json:"action"`
+}
+
 // Staff ...
 type Staff struct {
 	Reference   string   `json:"reference"` // ObjectID
@@ -13,7 +22,7 @@ type Staff struct {
 	Active      bool     `json:"active"`
 	IsRoot      bool     `json:"isRoot"`
 	Permissions []string `json:"permissions"`
-	Source      string   `json:"source"`
+	Source      []string `json:"source"`
 }
 
 // ListStaff ...
@@ -29,14 +38,13 @@ type Config struct {
 
 // StaffCheckPermissionBody ...
 type StaffCheckPermissionBody struct {
-	StaffID    string                 `json:"staffId"`
-	Token      string                 `json:"token"`
-	Permission []string               `json:"permission"`
-	Action     string                 `json:"action"`
-	Source     string                 `json:"source"`
-	Code       string                 `json:"code,omitempty"`
-	Payload    PayloadCheckPermission `json:"payload"`
-	IsRoot     string                 `json:"isRoot"`
+	StaffID    string   `json:"staffId"`
+	Token      string   `json:"token"`
+	Permission []string `json:"permission"`
+	Action     string   `json:"action"`
+	Source     string   `json:"source"`
+	Code       string   `json:"code,omitempty"`
+	IsRoot     string   `json:"isRoot"`
 }
 
 // PayloadCheckPermission ...
