@@ -2,7 +2,17 @@ package authentication
 
 import (
 	"github.com/Selly-Modules/natsio"
+	"go.mongodb.org/mongo-driver/bson"
 )
+
+// CommonQuery ...
+type CommonQuery struct {
+	Page    int64  `json:"page"`
+	Limit   int64  `json:"limit"`
+	Keyword string `json:"keyword"`
+	Sort    bson.D `json:"sort"`
+	StaffID string `json:"staffID"`
+}
 
 // Log ...
 type Log struct {
@@ -11,6 +21,23 @@ type Log struct {
 	Source     string                 `json:"source"`
 	Permission []string               `json:"permission"`
 	Action     string                 `json:"action"`
+}
+
+// LogsResponse ...
+type LogsResponse struct {
+	ID        string                 `json:"_id"`
+	Staff     string                 `json:"staff"`
+	Payload   PayloadCheckPermission `json:"payload"`
+	Action    string                 `json:"action"`
+	CreatedAt string                 `json:"createdAt"`
+}
+
+// ListPageResponse ...
+type ListPageResponse struct {
+	Data  []interface{} `json:"data"`
+	Total int64         `json:"total"`
+	Page  int64         `json:"page"`
+	Limit int64         `json:"limit"`
 }
 
 // Staff ...
@@ -41,7 +68,6 @@ type StaffCheckPermissionBody struct {
 	StaffID    string   `json:"staffId"`
 	Token      string   `json:"token"`
 	Permission []string `json:"permission"`
-	Action     string   `json:"action"`
 	Source     string   `json:"source"`
 	Code       string   `json:"code,omitempty"`
 	IsRoot     string   `json:"isRoot"`

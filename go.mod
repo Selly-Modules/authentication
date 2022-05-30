@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/Selly-Modules/natsio v0.0.0-20220419025827-e72bc82991bf
+	go.mongodb.org/mongo-driver v1.9.1
 )
 
 require (
