@@ -8,5 +8,6 @@ const (
 	SubjectRequestNatsStaffCreate = "authentication.request.staff.create"
 	SubjectRequestNatsStaffUpdate = "authentication.request.staff.update"
 
-	SubjectRequestNatsAddLogs = "authentication.request.logs.create"
+	SubjectRequestNatsAddLogs     = "authentication.request.logs.create"
+	SubjectRequestNatsLogsGetList = "authentication.request.logs.list"
 )

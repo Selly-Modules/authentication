@@ -33,3 +33,8 @@ func (Request) UpdateStaff(payload Staff) (*Response, error) {
 func (Request) SaveLog(payload Log) (*Response, error) {
 	return requestNats(SubjectRequestNatsAddLogs, toBytes(payload))
 }
+
+// GetListLogs ...
+func (Request) GetListLogs(payload Log) (*Response, error) {
+	return requestNats(SubjectRequestNatsLogsGetList, toBytes(payload))
+}
