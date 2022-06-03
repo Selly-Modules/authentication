@@ -19,6 +19,11 @@ type GetTokenByPhoneBody struct {
 	Phone string `json:"phone"`
 }
 
+// GetTokenByPhoneResponse ...
+type GetTokenByPhoneResponse struct {
+	Token string `json:"token"`
+}
+
 // Log ...
 type Log struct {
 	Reference  string                 `json:"reference"`
