@@ -84,6 +84,7 @@ type PayloadCheckPermission struct {
 type StaffCheckPermissionResponse struct {
 	Message string `json:"message"`
 	IsValid bool   `json:"isValid"`
+	Code    int    `json:"code"`
 }
 
 // StaffGetPermissions ...
