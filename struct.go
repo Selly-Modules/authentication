@@ -16,6 +16,16 @@ type CommonQuery struct {
 	StaffID string `json:"staffID"`
 }
 
+// GetTokenByPhoneBody ...
+type GetTokenByPhoneBody struct {
+	Phone string `json:"phone"`
+}
+
+// GetTokenByPhoneResponse ...
+type GetTokenByPhoneResponse struct {
+	Token string `json:"token"`
+}
+
 // GetInfoStaff ...
 type GetInfoStaff struct {
 	Condition interface{} `json:"condition"`

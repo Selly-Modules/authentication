@@ -12,4 +12,6 @@ const (
 
 	SubjectRequestNatsAddLogs     = "authentication.request.logs.create"
 	SubjectRequestNatsLogsGetList = "authentication.request.logs.list"
+
+	SubjectRequestNatsGetTokenWithPhone = "authentication.request.staff.get_token"
 )

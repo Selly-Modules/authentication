@@ -48,3 +48,8 @@ func (Request) SaveLog(payload Log) (*Response, error) {
 func (Request) GetListLogs(payload *CommonQuery) (*Response, error) {
 	return requestNats(SubjectRequestNatsLogsGetList, toBytes(payload))
 }
+
+// GetTokenWithPhoneNumber ...
+func (Request) GetTokenWithPhoneNumber(payload *GetTokenByPhoneBody) (*Response, error) {
+	return requestNats(SubjectRequestNatsGetTokenWithPhone, toBytes(payload))
+}
