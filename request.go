@@ -29,6 +29,11 @@ func (Request) UpdateStaff(payload Staff) (*Response, error) {
 	return requestNats(SubjectRequestNatsStaffUpdate, toBytes(payload))
 }
 
+// GetInfoStaff ...
+func (Request) GetInfoStaff(payload *CommonQuery) (*Response, error) {
+	return requestNats(SubjectRequestNatsStaffGetInfo, toBytes(payload))
+}
+
 // SaveLog ...
 func (Request) SaveLog(payload Log) (*Response, error) {
 	return requestNats(SubjectRequestNatsAddLogs, toBytes(payload))
