@@ -30,7 +30,7 @@ func (Request) UpdateStaff(payload Staff) (*Response, error) {
 }
 
 // GetInfoStaff ...
-func (Request) GetInfoStaff(payload *CommonQuery) (*Response, error) {
+func (Request) GetInfoStaff(payload GetInfoStaff) (*Response, error) {
 	return requestNats(SubjectRequestNatsStaffGetInfo, toBytes(payload))
 }
 

@@ -14,6 +14,11 @@ type CommonQuery struct {
 	StaffID string `json:"staffID"`
 }
 
+// GetInfoStaff ...
+type GetInfoStaff struct {
+	Condition interface{} `json:"condition"`
+}
+
 // Log ...
 type Log struct {
 	Reference  string                 `json:"reference"`
