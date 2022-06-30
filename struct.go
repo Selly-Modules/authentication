@@ -3,6 +3,8 @@ package authentication
 import (
 	"github.com/Selly-Modules/natsio"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"time"
 )
 
 // CommonQuery ...
@@ -127,4 +129,47 @@ type Response struct {
 	Success bool   `json:"success"`
 	Data    []byte `json:"data,omitempty"`
 	Message string `json:"message"`
+}
+
+// StaffInfo ...
+type StaffInfo struct {
+	ID                   primitive.ObjectID `json:"_id"`
+	Name                 string             `json:"name"`
+	SearchString         string             `json:"searchString"`
+	Email                string             `json:"email"`
+	Phone                string             `json:"phone"`
+	Active               bool               `json:"active"`
+	Role                 primitive.ObjectID `json:"role,omitempty"`
+	Avatar               *FilePhoto         `json:"avatar,omitempty"`
+	CreatedAt            time.Time          `json:"createdAt"`
+	UpdatedAt            time.Time          `json:"updatedAt"`
+	IsRoot               bool               `json:"isRoot"`
+	Permissions          []string           `json:"permissions"`
+	Source               []string           `json:"source"`
+	NotAllowedLoginAdmin bool               `json:"notAllowedLoginAdmin"`
+}
+
+// ListStaffInfo ...
+type ListStaffInfo struct {
+	Staffs []StaffInfo `json:"staff"`
+}
+
+// FilePhoto ...
+type FilePhoto struct {
+	ID         primitive.ObjectID `json:"_id"`
+	Name       string             `json:"name,omitempty"`
+	Dimensions *FileDimensions    `json:"dimensions"`
+}
+
+// FileSize ...
+type FileSize struct {
+	Width  int    `json:"width"`
+	Height int    `json:"height"`
+	URL    string `json:"url"`
+}
+
+// FileDimensions ...
+type FileDimensions struct {
+	Small  *FileSize `json:"sm"`
+	Medium *FileSize `json:"md"`
 }

@@ -34,6 +34,11 @@ func (Request) GetInfoStaff(payload GetInfoStaff) (*Response, error) {
 	return requestNats(SubjectRequestNatsStaffGetInfo, toBytes(payload))
 }
 
+// GetListStaff ...
+func (Request) GetListStaff(payload GetInfoStaff) (*Response, error) {
+	return requestNats(SubjectRequestNatsStaffGetList, toBytes(payload))
+}
+
 // SaveLog ...
 func (Request) SaveLog(payload Log) (*Response, error) {
 	return requestNats(SubjectRequestNatsAddLogs, toBytes(payload))
