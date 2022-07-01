@@ -24,9 +24,14 @@ type GetTokenByPhoneResponse struct {
 	Token string `json:"token"`
 }
 
-// GetInfoStaff ...
+// GetInfoStaff
+// Convert to bson bytes
+// When partner use. Bson unmarshal convert to struct
 type GetInfoStaff struct {
-	Condition interface{} `json:"condition"`
+	Condition interface{}
+	Page      int
+	Limit     int
+	Sort      bson.D
 }
 
 // Log ...

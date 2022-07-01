@@ -31,12 +31,12 @@ func (Request) UpdateStaff(payload Staff) (*Response, error) {
 
 // GetInfoStaff ...
 func (Request) GetInfoStaff(payload GetInfoStaff) (*Response, error) {
-	return requestNats(SubjectRequestNatsStaffGetInfo, toBytes(payload))
+	return requestNats(SubjectRequestNatsStaffGetInfo, bsonToBytes(payload))
 }
 
 // GetListStaff ...
 func (Request) GetListStaff(payload GetInfoStaff) (*Response, error) {
-	return requestNats(SubjectRequestNatsStaffGetList, toBytes(payload))
+	return requestNats(SubjectRequestNatsStaffGetList, bsonToBytes(payload))
 }
 
 // SaveLog ...

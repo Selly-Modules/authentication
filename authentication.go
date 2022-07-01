@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/Selly-Modules/natsio"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 // Client ...
@@ -67,5 +68,11 @@ func requestNats(subject string, data []byte) (*Response, error) {
 
 func toBytes(data interface{}) []byte {
 	b, _ := json.Marshal(data)
+	return b
+}
+
+// bsonToBytes ...
+func bsonToBytes(data interface{}) []byte {
+	b, _ := bson.Marshal(data)
 	return b
 }
