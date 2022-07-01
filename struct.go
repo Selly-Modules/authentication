@@ -24,6 +24,16 @@ type GetTokenByPhoneResponse struct {
 	Token string `json:"token"`
 }
 
+// GetInfoStaff
+// Convert to bson bytes
+// When partner use. Bson unmarshal convert to struct
+type GetInfoStaff struct {
+	Condition interface{}
+	Page      int64
+	Limit     int64
+	Sort      bson.D
+}
+
 // Log ...
 type Log struct {
 	Reference  string                 `json:"reference"`
@@ -73,14 +83,25 @@ type Config struct {
 	Nats   natsio.Config
 }
 
+// Agent ...
+type Agent struct {
+	Source   string `json:"source"`
+	IP       string `json:"ip"`
+	Platform string `json:"platform"`
+	Version  string `json:"version"`
+}
+
 // StaffCheckPermissionBody ...
 type StaffCheckPermissionBody struct {
-	StaffID    string   `json:"staffId"`
-	Token      string   `json:"token"`
-	Permission []string `json:"permission"`
-	Source     string   `json:"source"`
-	Code       string   `json:"code,omitempty"`
-	IsRoot     string   `json:"isRoot"`
+	StaffID    string                 `json:"staffId"`
+	Token      string                 `json:"token"`
+	Permission []string               `json:"permission"`
+	Source     string                 `json:"source"`
+	Code       string                 `json:"code,omitempty"`
+	IsRoot     string                 `json:"isRoot"`
+	Agent      Agent                  `json:"agent"`
+	DeviceId   string                 `json:"deviceId"`
+	Payload    PayloadCheckPermission `json:"payload"`
 }
 
 // PayloadCheckPermission ...
