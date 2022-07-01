@@ -29,8 +29,8 @@ type GetTokenByPhoneResponse struct {
 // When partner use. Bson unmarshal convert to struct
 type GetInfoStaff struct {
 	Condition interface{}
-	Page      int
-	Limit     int
+	Page      int64
+	Limit     int64
 	Sort      bson.D
 }
 
