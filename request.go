@@ -53,3 +53,8 @@ func (Request) GetListLogs(payload *CommonQuery) (*Response, error) {
 func (Request) GetTokenWithPhoneNumber(payload *GetTokenByPhoneBody) (*Response, error) {
 	return requestNats(SubjectRequestNatsGetTokenWithPhone, toBytes(payload))
 }
+
+// GetSecretKeyAuth ...
+func (Request) GetSecretKeyAuth() (*Response, error) {
+	return requestNats(SubjectRequestGetSecretKey, toBytes(""))
+}
