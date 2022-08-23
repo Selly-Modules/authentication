@@ -9,6 +9,11 @@ func (Request) CheckPermission(payload StaffCheckPermissionBody) (*Response, err
 	return requestNats(SubjectRequestNatsCheckPermission, toBytes(payload))
 }
 
+// VerifyCode ...
+func (Request) VerifyCode(payload StaffVerifyCodeBody) (*Response, error) {
+	return requestNats(SubjectRequestNatsVerifyCode, toBytes(payload))
+}
+
 // GetPermission ...
 func (Request) GetPermission(payload StaffGetPermissions) (*Response, error) {
 	return requestNats(SubjectRequestNatsGetPermission, toBytes(payload))

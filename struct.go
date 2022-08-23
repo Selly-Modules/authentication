@@ -5,6 +5,13 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
+// StaffVerifyCodeBody ...
+type StaffVerifyCodeBody struct {
+	Code    string `json:"code"`
+	StaffID string `json:"staffId"`
+	Source  string `json:"source"`
+}
+
 // CommonQuery ...
 type CommonQuery struct {
 	Page    int64  `json:"page"`
