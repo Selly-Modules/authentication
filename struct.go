@@ -12,6 +12,11 @@ type StaffVerifyCodeBody struct {
 	Source  string `json:"source"`
 }
 
+// StaffVerifyCodeResponse ...
+type StaffVerifyCodeResponse struct {
+	Success bool `json:"success"`
+}
+
 // CommonQuery ...
 type CommonQuery struct {
 	Page    int64  `json:"page"`
